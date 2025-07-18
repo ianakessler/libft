@@ -4,6 +4,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
+int	*ft_strnstr(char *substr, char *str, int size);
+int	ft_strlcpy(char *dest, char *src, int size);
+int	ft_strlcat(char *dest, char *src, int size);
 int	ft_strncmp(char *s1, char *s2, int n);
 char	*ft_strchr(char *str, int c);
 char	*ft_strrchr(char *str, int c);

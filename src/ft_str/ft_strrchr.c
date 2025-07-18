@@ -11,7 +11,7 @@ char	*ft_strrchr(char *str, int c)
 		i++;
 	}
 	if (last_occurrence != 0)
-		return (*str[last_occurrence]);
+		return (&str[last_occurrence]);
 	else
 		return (0);
 }
