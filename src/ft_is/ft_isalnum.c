@@ -6,10 +6,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	int res = ft_isalnum('i');
-	printf("%d", res);
-}

@@ -20,11 +20,3 @@ char	*ft_strnstr(char *substr, char *str, int size)
 	}
 	return (0);
 }
-#include <stdio.h>
-int	main(void)
-{
-	char *str = "banana de pijamas";
-	char *res = ft_strnstr("ana", str, 10);
-	printf("%s", res);
-	return 1;
-}
