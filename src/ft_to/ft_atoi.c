@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 19:53:17 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/21 20:17:31 by iaratang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 static int ft_isspace(int c)
 {
 	return (c == ' ' || (c >= '\t' && c <= '\r'));
@@ -44,13 +56,6 @@ int	ft_atoi(char *str)
 			return (0);
 		while (ft_isnumber(str[i]))
 		{
-			if(res > 2147483647 / 10 || (res == 2147483647 / 10 && str[i] - '0' > 7))
-			{
-				if (signal == -1)
-					return (-2147483648);
-				if (signal == 1)
-					return (2147483647);
-			}
 			res = res * 10 + (str[i] - '0');
 			i++;
 		}
@@ -59,3 +64,20 @@ int	ft_atoi(char *str)
 	return (0);
 }
 
+#include <stdlib.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	int res = ft_atoi("1");
+	int res1 = ft_atoi("999999999999");
+	int res2 = atoi("1");
+	int res3 = atoi("9999999999999");
+
+	printf("%d\n", res);
+	printf("%d\n", res1);
+	printf("Original\n");
+	printf("%d\n", res2);
+	printf("%d\n", res3);
+
+}
