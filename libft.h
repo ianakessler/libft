@@ -6,16 +6,17 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/23 18:24:48 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/23 20:31:38 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stddef.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
 
 int	ft_atoi(char *c);
 int	ft_isalpha(int c);
@@ -33,5 +34,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int c);
+int ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

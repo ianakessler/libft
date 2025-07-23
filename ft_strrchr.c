@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 15:48:43 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/23 20:27:58 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/23 19:53:18 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/23 20:15:47 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	unsigned char	*ptr_dst;
-	unsigned char	*ptr_src;
+	int	i;
+	int	last;
 
-	if (!src && !dst)
-		return (dst);
-	ptr_dst = (unsigned char *) dst;
-	ptr_src = (unsigned char *) src;
-	while (n > 0)
+	last = -1;
+	while (str[i])
 	{
-		*(ptr_dst++) = *(ptr_src++);
-		n--;
+		if (str[i] == (unsigned char) c)
+		{
+			last = i;
+		}
+		i++;
 	}
-	return (dst);
+	if (str[i] == (unsigned char) c)
+		last = i;
+	if (last >= 0)
+		return ((char *)&str[last]);
+	return (NULL);
 }
