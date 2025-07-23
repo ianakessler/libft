@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmov.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:52:19 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/21 19:52:19 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/23 16:15:43 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/23 19:23:05 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int n)
-{
-	if( n > 0)
-	{
-		char *tmp; 
-		int	i;
+#include "libft.h"
 
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
+	size_t			i;
+
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *) src;
+	if (!dst && !src)
+		return (dst);
+	if (ptr_dst > ptr_src)
+	{
+		while (len--)
+			*(ptr_dst + len) = *(ptr_src + len);
+	}
+	else
+	{
 		i = 0;
-		tmp = (char *)s;
-		while(i < n)
+		while (i < len)
 		{
-			tmp[i] = 0;
+			*(ptr_dst++) = *(ptr_src++);
 			i++;
 		}
 	}
+	return (dst);
 }

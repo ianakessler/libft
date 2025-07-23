@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:52:38 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/21 20:05:20 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/23 18:20:52 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/23 18:45:20 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, int c)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (&str[i]);
-		i++;
-	}
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

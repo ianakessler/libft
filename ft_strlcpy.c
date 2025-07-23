@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:52:21 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/21 19:56:39 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/23 17:10:39 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/23 19:24:13 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, int size)
+#include "libft.h"
+
+size_t	ft_strlen(const char *c);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned char	*dest_tmp;
-	unsigned char	*src_tmp;
-	int				i;
+	size_t	src_len;
+	size_t	i;
 
 	i = 0;
-	if (dest == 0 && src == 0)
-		return (dest);
-	dest_tmp = (unsigned char *) dest;
-	src_tmp = (unsigned char *) src;
-	while (i < size)
+	src_len = ft_strlen(src);
+	if (dstsize > src_len + 1)
 	{
-		dest_tmp[i] = src_tmp[i];
-		i++;
+		while (i < src_len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
 	}
-	return (dest);
+	else
+	{
+		while (i < dstsize - 1)
+		{
+			dst[i] = src[i];
+		}
+	}
+	dst[dstsize] = '\0';
+	return (src_len);
 }

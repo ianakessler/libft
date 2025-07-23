@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:53:02 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/21 19:53:03 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/23 15:48:43 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/23 16:03:15 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *substr, char *str, int size)
-{
-	int	i;
-	int	c;
+#include "libft.h"
 
-	i = 0;
-	c = 0;
-	if(!substr)
-		return (str);
-	
-	while (str[i] && i < size)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
+
+	if (!src && !dst)
+		return (dst);
+	ptr_dst = (unsigned char *) dst;
+	ptr_src = (unsigned char *) src;
+	while (n > 0)
 	{
-		while (str[i + c] == substr[c])
-		{
-			c++;
-			if(substr[c] == '\0')
-				return (&str[i + c -1]);
-		}
-		i++;
+		*(ptr_dst++) = *(ptr_src++);
+		n--;
 	}
-	return (0);
+	return (dst);
 }

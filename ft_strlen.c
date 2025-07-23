@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 19:51:49 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/21 19:54:26 by iaratang         ###   ########.fr       */
+/*   Created: 2025/07/22 17:56:53 by iaratang          #+#    #+#             */
+/*   Updated: 2025/07/22 18:31:47 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+size_t	ft_strlen(const char *c)
 {
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	size_t	i;
+
+	i = 0;
+	while (c[i])
+		i++;
+	return (i);
 }
