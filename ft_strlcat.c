@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:52:22 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/23 19:23:44 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:57:46 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
 	size_t	src_len;
-	size_t	i;
 
-	i = 0;
-	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (dstsize < dst_len + src_len)
-		return (dst_len + src_len);
-	if (dstsize > dst_len + src_len)
+	dst_len = ft_strlen(dst);
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
+	if (dst_len == dstsize)
+		return (dstsize + src_len);
+	if (src_len < dstsize - dst_len)
+		ft_memcpy(&dst[dst_len], src, src_len + 1);
+	else
 	{
-		while (i < dstsize - 1)
-		{
-			dst[dst_len + 1] = src[i];
-			i++;
-		}
+		ft_memcpy(&dst[dst_len], src, dstsize - src_len -1);
+		dst[dstsize - 1] = '\0';
 	}
-	dst[dstsize] = '\0';
-	return (ft_strlen(dst));
-}
+	return (dst_len + src_len);
+}	
