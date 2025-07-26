@@ -1,1 +1,8 @@
+#tester
+
 /Libftest
+
+#files
+
+.gitignore
+libft.a
