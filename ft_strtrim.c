@@ -76,10 +76,3 @@ static int  to_trim(const char c, const char *set)
     }
     return (0);
 }
-
-int main()
-{
-    char    *str = "abababababmy name is syionababababab";
-    char    *res = ft_strtrim(str, "ab");
-    printf("%s", res);
-}
