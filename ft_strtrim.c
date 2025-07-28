@@ -6,61 +6,48 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 22:49:53 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/25 22:50:11 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/28 15:59:05 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *s1_trimmed(const char *s1, size_t size, const char *set);
+static char *s1_trimmed(const char *s1, size_t start, size_t len);
 static int  to_trim(const char c, const char *set);
 
 char    *ft_strtrim(const char *s1, const char *set)
 {
-    size_t  len;
-    size_t  cut_size;
-    size_t  i;
+	int	i;
+	int	j;
 
-    len = ft_strlen(s1);
-    i = 0;
-    cut_size = 0;
-    while (s1[i] != ' ')
-    {
-        if (to_trim(s1[i], set))
-            cut_size++;
-        i++;
-    }
-    i = len;
-    while (s1[i] != ' ')
-    {
-        if (to_trim(s1[i], set))
-            cut_size++;
-        i--;
-    }
-    return (s1_trimmed(s1, len + 1 - cut_size, set));
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	if (j + 1 == 0)
+		return (ft_strdup(""));
+	while (to_trim(s1[i], set))
+		i++;
+	while (to_trim(s1[j], set))
+		j--;
+	return (s1_trimmed(s1, i , j - (i - 1)));
 }
 
-static char *s1_trimmed(const char *s1, size_t size, const char *set)
+static char *s1_trimmed(const char *s1, size_t start, size_t len)
 {
-    char    *str;
-    size_t  i;
-    size_t  j;
-
-    str = ft_calloc(size, sizeof(char));
-    if (!str)
-        return (NULL);
-    i = 0;
-    j = 0;
-    while (s1[i])
-    {
-        if (!to_trim(s1[i], set))
-        {
-            str[j] = s1[i];
-            j++;
-        }
-        i++;
-    }
-    return (str);
+	char	*str;
+	size_t	i;
+	
+	i = 0;
+	if (len <= 0 || start >= ft_strlen(s1))
+		return (ft_strdup(""));
+	str = ft_calloc(len + 1, sizeof(char));
+	if(!str)
+		return (NULL);
+	while ( i < len)
+	{
+		str[i] = s1[start + i];
+		i++;
+	}
+	return (str);
 }
 
 static int  to_trim(const char c, const char *set)
