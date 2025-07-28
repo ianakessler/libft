@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:49:31 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/24 17:59:30 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:52:42 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 	while (tmp[i])
 	{
 		tmp[i] = 0;
+		i++;
 	}
 	return (tmp);
 }

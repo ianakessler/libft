@@ -6,11 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 16:04:45 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/28 16:05:29 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/28 18:55:50 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**ft_split(const char *s, char c)
-{
-	
-}
