@@ -6,3 +6,6 @@
 
 .gitignore
 libft.a
+
+#vscode settings
+/.vscode
