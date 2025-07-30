@@ -6,11 +6,11 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:40:10 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/23 19:18:15 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/30 17:52:48 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		signal;
