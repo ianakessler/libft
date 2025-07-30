@@ -12,23 +12,35 @@
 
 #include "libft.h"
 
-static char *s1_trimmed(const char *s1, size_t start, size_t len);
-static int  to_trim(const char c, const char *set);
-
 char    *ft_strtrim(const char *s1, const char *set)
 {
-	int	i;
-	int	j;
+    size_t  s1_len;
+    size_t  i;
+    size_t  j;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	if (j + 1 == 0)
-		return (ft_strdup(""));
-	while (to_trim(s1[i], set))
-		i++;
-	while (to_trim(s1[j], set))
-		j--;
-	return (s1_trimmed(s1, i , j - (i - 1)));
+    s1_len = ft_strlen(s1);
+    while (str[i] != ' ')
+    {
+        while (set[j])
+        {
+            if (str[i] == set[j])
+                str[i] = 0;
+            j++;
+        }
+        i++;
+    }
+    i = s1_len;
+    while (str[i] != ' ')
+    {
+        while (set[j])
+        {
+            if (str[i] == set[j])
+                str[i] = 0;
+            j++;
+        }
+        i--;
+    }
+    return (ft_strdup(ft_strlen(s1) + 1, sizeof(char)));
 }
 
 static char *s1_trimmed(const char *s1, size_t start, size_t len)
