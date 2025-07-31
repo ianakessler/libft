@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/31 15:04:04 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:24:49 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strchr(const char *str, int c);
 char	**ft_split(const char *s, char c);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *c);
