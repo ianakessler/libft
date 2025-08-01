@@ -43,6 +43,8 @@ OBJS = $(SRCS:.c=.o)
 BONUS_SRC = ft_lstnew_bonus.c \
 	        ft_lstadd_front_bonus.c \
 			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c \
+			ft_lstadd_back_bonus.c \
 
 BONUS_OBJS := $(BONUS_SRC:%.c=%.o)
 
