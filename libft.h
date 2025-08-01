@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/08/01 14:09:57 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/08/01 15:16:33 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_calloc(size_t count, size_t size);
