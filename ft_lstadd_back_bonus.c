@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 16:28:02 by iaratang          #+#    #+#             */
-/*   Updated: 2025/08/01 16:36:40 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/08/01 18:06:23 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	if (!last)
 		*lst = new;
-	last -> next = new;
+	else
+		last -> next = new;
 }
