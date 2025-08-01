@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/07/31 15:24:49 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/08/01 14:09:57 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -43,6 +49,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s1);
+t_list	*ft_lstnew(void *content);
 size_t	ft_strlen(const char *c);
 int		ft_atoi(const char *c);
 int		ft_isalpha(int c);
