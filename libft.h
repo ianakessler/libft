@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/08/01 15:16:33 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/08/01 16:13:10 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s1);
 t_list	*ft_lstnew(void *content);
 size_t	ft_strlen(const char *c);
+int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
