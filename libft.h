@@ -6,7 +6,7 @@
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:26:55 by iaratang          #+#    #+#             */
-/*   Updated: 2025/08/01 19:03:19 by iaratang         ###   ########.fr       */
+/*   Updated: 2025/08/02 11:16:47 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 }	t_list;
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -39,6 +40,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strjoin(const char *s1, const char *s2);
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
