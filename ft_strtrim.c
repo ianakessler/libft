@@ -5,34 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iaratang <iaratang@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 22:49:53 by iaratang          #+#    #+#             */
-/*   Updated: 2025/08/20 14:14:40 by iaratang         ###   ########.fr       */
+/*   Created: 2025/08/15 14:38:26 by iaratang          #+#    #+#             */
+/*   Updated: 2025/08/19 13:37:31 by iaratang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*s1_trimmed(const char *s1, size_t start, size_t len);
-static int	to_trim(const char c, const char *set);
-
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	i;
-	int	j;
+	char	*trimmed;
+	size_t	initial;
+	size_t	end_set;
+	size_t	i;
 
+	if (s1 == 0 || set == 0)
+		return (0);
+	initial = 0;
+	while (s1[initial] && ft_strchr((char *)set, s1[initial]))
+		initial++;
+	end_set = ft_strlen(s1);
+	while (end_set > initial && ft_strchr((char *)set, s1[end_set - 1]))
+	end_set--;
+	trimmed = (char *)malloc(end_set - initial + 1);
+	if (trimmed == NULL)
+		return (NULL);
 	i = 0;
-	j = ft_strlen(s1) - 1;
-	if (j + 1 == 0)
-		return (ft_strdup(""));
-	whil
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
+	while (initial < end_set)
+		trimmed[i++] = s1[initial++];
+	trimmed[i] = '\0';
+	return (trimmed);
 }

@@ -28,7 +28,6 @@ SRCS = ft_isalpha.c \
 	   ft_strdup.c \
 	   ft_substr.c \
 	   ft_strjoin.c \
-	   ft_strtrim.c \
 	   ft_itoa.c \
 	   ft_strmapi.c \
 	   ft_striteri.c \
@@ -36,6 +35,7 @@ SRCS = ft_isalpha.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
+	   ft_strtrim.c \
 	   ft_split.c
 
 OBJS = $(SRCS:.c=.o)
@@ -48,7 +48,7 @@ BONUS_SRC = ft_lstnew_bonus.c \
 			ft_lstdelone_bonus.c \
 			ft_lstclear_bonus.c \
 			ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c 
+			ft_lstmap_bonus.c
 
 BONUS_OBJS := $(BONUS_SRC:%.c=%.o)
 
@@ -68,7 +68,7 @@ $.o: %.c
 clean:
 	@$(RM) $(OBJS)
 	@$(RM) $(BONUS_OBJS)
- 
+
 fclean: clean
 	@$(RM) $(NAME)
 
